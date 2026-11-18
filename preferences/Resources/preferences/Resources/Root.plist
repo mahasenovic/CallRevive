@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>CALLREVIVE</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.mohsen.touchguard</string>
+			<key>key</key>
+			<string>guardEnabled</string>
+			<key>label</key>
+			<string>Guard Enabled</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.mohsen.touchguard</string>
+			<key>key</key>
+			<string>resetOnCallStart</string>
+			<key>label</key>
+			<string>Reset Touch at Call Start</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.mohsen.touchguard</string>
+			<key>key</key>
+			<string>dimOnCall</string>
+			<key>label</key>
+			<string>Dim Screen During Calls</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.mohsen.touchguard</string>
+			<key>key</key>
+			<string>lowPowerOnCall</string>
+			<key>label</key>
+			<string>Low Power Mode During Calls</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.mohsen.touchguard</string>
+			<key>key</key>
+			<string>thermalMonitor</string>
+			<key>label</key>
+			<string>Thermal Monitor During Calls</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>RESET METHODS</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.mohsen.touchguard</string>
+			<key>key</key>
+			<string>useSbreload</string>
+			<key>label</key>
+			<string>Use sbreload</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.mohsen.touchguard</string>
+			<key>key</key>
+			<string>useBackboarddKill</string>
+			<key>label</key>
+			<string>Use Kill backboardd</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.mohsen.touchguard</string>
+			<key>key</key>
+			<string>useRelaunchSpringBoard</string>
+			<key>label</key>
+			<string>Use Relaunch SpringBoard</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.mohsen.touchguard</string>
+			<key>key</key>
+			<string>useFBSystemService</string>
+			<key>label</key>
+			<string>Use FBSystemService</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>Developed by Mohsen Mahmoud
+© 2026 Mohsen Mahmoud</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>GitHub</string>
+			<key>action</key>
+			<string>openGitHub</string>
+		</dict>
+	</array>
+	<key>title</key>
+	<string>CallRevive</string>
+</dict>
+</plist>
