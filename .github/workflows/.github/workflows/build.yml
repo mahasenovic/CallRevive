@@ -1,0 +1,44 @@
+name: Build CallRevive 1.0 cosmetic package
+on:
+  workflow_dispatch:
+  push:
+    paths: ['.github/workflows/build.yml']
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Apple and Theos build environment
+        run: |
+          set -euo pipefail
+          brew install ldid dpkg
+          git clone --recursive https://github.com/theos/theos.git "$HOME/theos"
+          echo "THEOS=$HOME/theos" >> "$GITHUB_ENV"
+          rm -rf "$HOME/theos/sdks"
+          git clone --filter=blob:none --sparse https://github.com/theos/sdks.git "$HOME/theos/sdks"
+          git -C "$HOME/theos/sdks" sparse-checkout set iPhoneOS16.5.sdk
+      - name: Verify base, restore artwork, test model and build preferences
+        run: |
+          set -euo pipefail
+          python3 repack.py
+          xcrun clang -std=c11 -Wall -Wextra -Werror model-test.c -o /tmp/model-test
+          /tmp/model-test
+          make -C preferences clean all FINALPACKAGE=1 TARGET=iphone:clang:latest:16.4 THEOS_PACKAGE_SCHEME=rootless
+          PREFS=preferences/.theos/obj/TouchGuardPrefs.bundle/TouchGuardPrefs
+          test -f "$PREFS"
+          lipo -info "$PREFS"
+          python3 tools/minclass/check_auth.py "$PREFS" TouchGuardPrefs
+          python3 repack.py "$PREFS"
+          python3 tools/minclass/check_auth.py dist/root/var/jb/Library/MobileSubstrate/DynamicLibraries/MohsenTouchGuard.dylib MohsenTouchGuard
+          otool -tvV "$PREFS" > dist/prefs-disassembly.txt
+          otool -ov "$PREFS" > dist/prefs-objc-metadata.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: CallRevive-1.0-package-and-audit
+          retention-days: 7
+          path: |
+            dist/com.mohsen.touchguard_1.0_iphoneos-arm64.deb
+            dist/AUDIT.json
+            dist/prefs-*.txt
