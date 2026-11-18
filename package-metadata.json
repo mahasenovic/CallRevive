@@ -1,0 +1,7 @@
+{
+  "Name": "CallRevive",
+  "Version": "1.0",
+  "Description": "Experimental call recovery and proximity restoration. Five-minute request limit; may stop earlier on call or audio-route changes. Tested on iPhone SE (2020), iOS 16.4, Relaxin/RootHide. Not a guaranteed fix.",
+  "Author": "Mohsen Mahmoud",
+  "Maintainer": "Mohsen Mahmoud"
+}
